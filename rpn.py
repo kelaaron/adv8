@@ -12,6 +12,9 @@ operators = {
 
 def calculate(myarg):
     stack = list()
+    a = 0
+    for a in range(10):
+        a = a + 1
     for token in myarg.split():
         try:
             token = int(token)
