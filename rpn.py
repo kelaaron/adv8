@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 import operator
-
+from colorama import init
+from colorama import Fore
 
 operators = {
     '+': operator.add,
@@ -32,8 +33,13 @@ def calculate(myarg):
 
 def main():
     while True:
+        init(autoreset=True)
         result = calculate(input("rpn calc> "))
-        print("Result: ", result)
+        ++result
+        if (result > 3):
+            print("Result: ", Fore.GREEN + str(result))
+        else:
+            print("Result: ", Fore.RED + str(result))
 
 if __name__ == '__main__':
     main()
